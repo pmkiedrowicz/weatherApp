@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQL57Dialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost/weatherdb
+        </property>
+        <property name="hibernate.connection.serverTimezone">
+            UCT
+        </property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <property name="hibernate.connection.useSSL">
+            true
+        </property>
+        <property name="hibernate.connection.password">
+            kakashi6
+        </property>
+        <!--Create, create-drop, update database-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!--Enable the logging all the generated SQL statements to the console-->
+        <property name="hibernate.show_sql">true</property>
+
+        <!--Format the generated SQL statement to make it more readable,
+        but takes up more screen space. :)-->
+        <property name="hibernate.format_sql">true</property>
+        <!--Shows statistics of code being done-->
+        <property name="hibernate.generate_statistics">true</property>
+
+        <mapping class="serwer.entity.User" />
+        <mapping class="serwer.entity.Records" />
+        <!--<mapping class="com.sda.hibernate.entity.Book" />-->
+        <!--<mapping class="com.sda.hibernate.entity.Category" />-->
+
+    </session-factory>
+</hibernate-configuration>
+
+
